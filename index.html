@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, shrink-to-fit=no">
+  <title>لوحة تحكم | نصر الدين عبد الرحمن محمد</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- الشريط الجانبي -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <i class="fas fa-chart-pie"></i>
+          <span class="logo-text">داش بورد</span>
+        </div>
+        <button class="collapse-btn" id="collapseSidebarBtn" title="طي القائمة">
+          <i class="fas fa-chevron-right" id="collapseIcon"></i>
+        </button>
+      </div>
+      
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#" class="nav-link active"><i class="fas fa-home"></i><span>الرئيسية</span></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-chart-line"></i><span>التحليلات</span></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i><span>الطلبات</span></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-users"></i><span>العملاء</span></a></li>
+        <li class="nav-item"><a href="#" class="nav-link"><i class="fas fa-cog"></i><span>الإعدادات</span></a></li>
+      </ul>
+      
+      <div class="sidebar-footer">
+        <div class="user-info">
+          <div class="user-avatar">ن ع</div>
+          <div class="user-details">
+            <strong>نصر الدين عبد الرحمن</strong>
+            <small>مدير النظام</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-content" id="mainContent">
+      <header class="top-header">
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="page-title">
+          <h2>لوحة التحكم</h2>
+          <p style="color: var(--text-muted);">مرحباً بك، نصر الدين عبد الرحمن محمد</p>
+        </div>
+        
+        <div class="header-actions">
+          <div class="search-box">
+            <i class="fas fa-search" style="color: var(--text-muted);"></i>
+            <input type="text" id="searchInput" placeholder="ابحث عن عميل أو منتج...">
+          </div>
+          
+          <div class="notification-wrapper">
+            <button class="notification-bell" id="notificationBell" type="button">
+              <i class="far fa-bell"></i>
+              <span class="badge" id="notificationBadge">3</span>
+            </button>
+            <div class="notifications-dropdown" id="notificationsDropdown">
+              <div class="notifications-header">
+                <span>الإشعارات</span>
+                <small id="markAllRead" style="color: var(--primary); cursor: pointer;">تحديد الكل كمقروء</small>
+              </div>
+              <ul class="notifications-list">
+                <li><strong>طلب جديد #1090</strong><br><small>منذ دقيقتين</small></li>
+                <li><strong>رسالة من عميل</strong><br><small>منذ 15 دقيقة</small></li>
+                <li><strong>تنبيه أمني</strong><br><small>منذ ساعة</small></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-info"><h3>1,245</h3><p>إجمالي المبيعات</p><small style="color: var(--success);">+12.5%</small></div>
+          <div class="stat-icon" style="color: var(--primary);"><i class="fas fa-dollar-sign"></i></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info"><h3>384</h3><p>طلبات جديدة</p><small style="color: var(--info);">+8.2%</small></div>
+          <div class="stat-icon" style="color: var(--info);"><i class="fas fa-shopping-bag"></i></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info"><h3>92</h3><p>عملاء جدد</p><small style="color: var(--warning);">+3.1%</small></div>
+          <div class="stat-icon" style="color: var(--warning);"><i class="fas fa-user-plus"></i></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-info"><h3>68%</h3><p>نسبة التحويل</p><small style="color: var(--success);">+5.4%</small></div>
+          <div class="stat-icon" style="color: var(--success);"><i class="fas fa-chart-bar"></i></div>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>أحدث الطلبات</h3>
+            <button class="btn" id="viewAllBtn">عرض الكل</button>
+          </div>
+          <div class="table-responsive">
+            <table id="ordersTable">
+              <thead><tr><th>العميل</th><th>المنتج</th><th>المبلغ</th><th>الحالة</th></tr></thead>
+              <tbody>
+                <tr><td>سارة علي</td><td>حقيبة يد</td><td>120$</td><td><span class="status completed">مكتمل</span></td></tr>
+                <tr><td>خالد يوسف</td><td>سماعات</td><td>85$</td><td><span class="status pending">معلق</span></td></tr>
+                <tr><td>منى أحمد</td><td>ساعة ذكية</td><td>250$</td><td><span class="status completed">مكتمل</span></td></tr>
+                <tr><td>محمد نور</td><td>حذاء رياضي</td><td>95$</td><td><span class="status pending">معلق</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header"><h3>آخر النشاطات</h3></div>
+          <ul class="activity-list">
+            <li class="activity-item"><div class="activity-icon"><i class="fas fa-check-circle"></i></div><div><strong>طلب جديد #1089</strong><br><small>منذ 5 دقائق</small></div></li>
+            <li class="activity-item"><div class="activity-icon"><i class="fas fa-user"></i></div><div><strong>تسجيل عميل جديد</strong><br><small>منذ 23 دقيقة</small></div></li>
+            <li class="activity-item"><div class="activity-icon"><i class="fas fa-chart-simple"></i></div><div><strong>تقرير شهري جاهز</strong><br><small>منذ ساعة</small></div></li>
+            <li class="activity-item"><div class="activity-icon"><i class="fas fa-cog"></i></div><div><strong>تحديث النظام</strong><br><small>منذ ساعتين</small></div></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </div>
+
+<script src="main.js"></script>
+</body>
+</html>
